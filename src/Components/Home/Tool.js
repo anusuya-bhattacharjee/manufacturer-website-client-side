@@ -9,6 +9,9 @@ const Tool = ({tool}) => {
         </figure>
         <div class="card-body items-center text-center">
           <h2 class="card-title">{tool.name}</h2>
+          <p>Price: {tool.price}</p>
+          <p>MinimumOrderQuantity: {tool.minimumOrderQuantity}</p>
+          <p>Availability: {tool.availability}</p>
           <p>{tool.description}</p>
           <div class="card-actions">
             <button class="btn btn-primary">Purchase</button>

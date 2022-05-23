@@ -10,7 +10,7 @@ const Tools = () => {
     })
     return (
         <div>
-         <h4 className="text-xl text-center">Tools</h4>
+         <h4 className="text-3xl mt-5 font-bold text-center">Tools</h4>
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-12">
             {
                 tools.map(tool => <Tool 
