@@ -7,7 +7,7 @@ import { getAuth } from "firebase/auth";
 const auth = getAuth(app);
 
 const Purchase = () => {
-  const [user, loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const { id } = useParams();
   const [tool, setTool] = useState({});
   const [qty, setQty] = useState();
@@ -19,6 +19,36 @@ const Purchase = () => {
       .then((res) => res.json())
       .then((data) => setTool(data));
   }, []);
+
+
+  const handleMyOrders = (event) => {
+    const toolId = id;
+    const name = tool.name;
+    const price = qty * tool.price;
+    const quantity = event.target.quantity.value;
+    const userName = user && user.displayName;
+    const userEmail = user && user.email;
+    const userPhone = event.target.phone.value;
+    const userAddress = event.target.address.value;
+    const isPaid = false;
+    const iscancelled = false;
+
+    const orderItem = {toolId, name, price, quantity, userName, userEmail, userPhone, userAddress, isPaid, iscancelled};
+
+
+    fetch("http://localhost:5000/addOrderItem", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(orderItem),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        alert("Your Order added successfully!!");
+        event.target.reset();
+      });
+
+  }
 
   const decreaseQty = () => {
     if (qty <= 100) {
@@ -68,6 +98,7 @@ const Purchase = () => {
         </figure>
      
         <div className="card-body">
+        <form onSubmit={handleMyOrders}>
           <h2 className="card-title justify-center">{tool.name}</h2>
           <div>
             <p>Price: {tool.price}</p>
@@ -80,6 +111,7 @@ const Purchase = () => {
               </button>
               <input
                 type="text"
+                name="quantity"
                 className="input input-bordered input-primary "
                 onChange={onChange}
                 value={qty}
@@ -92,15 +124,15 @@ const Purchase = () => {
             </div>
             {error}
             <h2 className="card-title justify-center mt-4">Your Information</h2>
-            <p>Your Name: {user ? user.displayName : 'hi'} </p>
-            <p>Your Email: {user ? user.email : 'hi'} </p>
-            <input type="text" placeholder="Your Phone Number" className="input input-bordered input-primary w-full max-w-xs mb-3 mt-3" />
-            <textarea className="textarea textarea-primary" placeholder="Your Address"></textarea>
+            <p>Your Name: {user && user.displayName} </p>
+            <p>Your Email: {user && user.email} </p>
+            <input type="text" name="phone" placeholder="Your Phone Number" className="input input-bordered input-primary w-full max-w-xs mb-3 mt-3" />
+            <textarea className="textarea textarea-primary" name="address" placeholder="Your Address"></textarea>
           </div>
-
           <div className="card-actions justify-center mt-5">
-            <button  disabled={qty < tool.minimumOrderQuantity || qty > tool.availableQuantity}  className="btn btn-primary">Buy Now</button>
+            <input value="Buy Now" type="submit"  disabled={qty < tool.minimumOrderQuantity || qty > tool.availableQuantity}  className="btn btn-primary"/>
           </div>
+          </form>
         </div>
       </div>
     </div>
