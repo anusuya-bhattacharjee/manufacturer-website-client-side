@@ -12,6 +12,7 @@ const Purchase = () => {
   const [tool, setTool] = useState({});
   const [qty, setQty] = useState();
 
+
   useEffect(() => {
     const url = `http://localhost:5000/tool/${id}`;
     fetch(url)
@@ -65,6 +66,7 @@ const Purchase = () => {
         <figure>
           <img className="object-contain h-48 w-96" src={tool.img} alt="Album" />
         </figure>
+     
         <div class="card-body">
           <h2 class="card-title justify-center">{tool.name}</h2>
           <div>
@@ -94,12 +96,10 @@ const Purchase = () => {
             <p>Your Email: {user ? user.email : 'hi'} </p>
             <input type="text" placeholder="Your Phone Number" class="input input-bordered input-primary w-full max-w-xs mb-3 mt-3" />
             <textarea class="textarea textarea-primary" placeholder="Your Address"></textarea>
-
-
           </div>
 
           <div class="card-actions justify-center mt-5">
-            <button disabled={qty < tool.minimumOrderQuantity || qty > tool.availableQuantity}  class="btn btn-primary">Buy Now</button>
+            <button  disabled={qty < tool.minimumOrderQuantity || qty > tool.availableQuantity}  class="btn btn-primary">Buy Now</button>
           </div>
         </div>
       </div>
