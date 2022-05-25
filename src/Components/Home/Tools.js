@@ -3,11 +3,13 @@ import Tool from './Tool';
 
 const Tools = () => {
     const [tools, setTools] = useState([]);
+    
     useEffect(() => {
         fetch('http://localhost:5000/tools')
         .then(res => res.json())
         .then(data => setTools(data))
     })
+
     return (
         <div>
          <h4 className="text-3xl mt-5 font-bold text-center text-teal-500">Tools</h4>

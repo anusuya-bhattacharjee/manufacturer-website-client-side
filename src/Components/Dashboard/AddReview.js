@@ -39,7 +39,7 @@ const AddReview = () => {
               placeholder="Review"
             />
           </div>
-          <div class="mb-6">
+          <div className="mb-6">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
               for="ratings"

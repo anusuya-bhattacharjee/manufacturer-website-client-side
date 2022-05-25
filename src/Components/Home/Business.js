@@ -13,8 +13,8 @@ const Business = () => {
         Try to Understand Users Expectation
       </h3>
       <div className="flex mt-5">
-        <div class="card w-96 bg-base-100 shadow-xl mr-2">
-          <div class="card-body">
+        <div className="card w-96 bg-base-100 shadow-xl mr-2">
+          <div className="card-body">
             <h2 className="flex justify-center text-7xl">
               <FaFontAwesomeFlag />
             </h2>
@@ -22,8 +22,8 @@ const Business = () => {
             <p className="text-2xl">Countries</p>
           </div>
         </div>
-        <div class="card w-96 bg-base-100 shadow-xl mr-2">
-          <div class="card-body">
+        <div className="card w-96 bg-base-100 shadow-xl mr-2">
+          <div className="card-body">
             <h2 className="flex justify-center text-7xl">
               <HiDesktopComputer />
             </h2>
@@ -31,8 +31,8 @@ const Business = () => {
             <p className="text-2xl">Complete Projects</p>
           </div>
         </div>
-        <div class="card w-96 bg-base-100 shadow-xl mr-2">
-          <div class="card-body">
+        <div className="card w-96 bg-base-100 shadow-xl mr-2">
+          <div className="card-body">
             <h2 className="flex justify-center text-7xl">
               <FaUsers />
             </h2>
@@ -40,8 +40,8 @@ const Business = () => {
             <p className="text-2xl">Happy Clients</p>
           </div>
         </div>
-        <div class="card w-96 bg-base-100 shadow-xl mr-2">
-          <div class="card-body">
+        <div className="card w-96 bg-base-100 shadow-xl mr-2">
+          <div className="card-body">
             <h2 className="flex justify-center text-7xl">
               <HiOutlineThumbUp />
             </h2>
