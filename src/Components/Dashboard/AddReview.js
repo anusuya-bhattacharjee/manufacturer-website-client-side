@@ -5,7 +5,8 @@ const AddReview = () => {
     const handleAddReview = (event) => {
         const addreview = event.target.review.value;
         const ratings = event.target.ratings.value;
-        const Review = { review: addreview, ratings: ratings};  
+        const Review = { review: addreview, ratings: ratings}; 
+       
 
         fetch("http://localhost:5000/addReview", {
             method: "POST",
