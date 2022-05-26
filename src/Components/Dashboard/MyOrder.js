@@ -2,17 +2,18 @@ import React from "react";
 
 const MyOrder = (props) => {
   const {
+    _id,
     toolId,
     name,
     price,
     quantity,
     userName,
-    userEmail,
     userPhone,
     userAddress,
     isPaid, 
     iscancelled
   } = props.order;
+
 
   return (
     <div class="card w-96 bg-base-100 shadow-xl">
@@ -26,10 +27,10 @@ const MyOrder = (props) => {
         
         <div className="flex">
         <div className="card-actions">
-          <button className="btn btn-primary mr-2">Cancel</button>
+          <button disabled={isPaid === true}  className="btn btn-primary mr-2" onClick={() => props.handleCancelButton(_id)}>Cancel</button>
         </div>
         <div className="card-actions">
-          <button className="btn btn-primary">Pay Now</button>
+          <button disabled={isPaid === true} className="btn btn-primary">Pay Now</button>
         </div>
         </div>
        

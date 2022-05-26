@@ -22,6 +22,7 @@ const Purchase = () => {
 
 
   const handleMyOrders = (event) => {
+    event.preventDefault();
     const toolId = id;
     const name = tool.name;
     const price = qty * tool.price;
