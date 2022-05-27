@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MyOrder = (props) => {
   const {
@@ -27,10 +28,10 @@ const MyOrder = (props) => {
         
         <div className="flex">
         <div className="card-actions">
-          <button disabled={isPaid === true}  className="btn btn-primary mr-2" onClick={() => props.handleCancelButton(_id)}>Cancel</button>
+        <button disabled={isPaid === true}  className="btn btn-primary mr-2" onClick={() => props.handleCancelButton(_id)}>Cancel</button> 
         </div>
         <div className="card-actions">
-          <button disabled={isPaid === true} className="btn btn-primary">Pay Now</button>
+        <Link to={`/dashboard/payment/${_id}`}><button disabled={isPaid === true} className="btn btn-primary">Pay Now</button></Link>
         </div>
         </div>
        

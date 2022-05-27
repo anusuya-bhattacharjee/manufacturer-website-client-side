@@ -37,7 +37,7 @@ const handleCancelButton = (id) => {
 
 
     return (
-        <div>
+        <div className="grid md:grid-cols-2 gap-3">
             {
                 orders.map(order => <MyOrder 
                 key={order._id}

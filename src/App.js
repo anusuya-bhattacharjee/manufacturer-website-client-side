@@ -14,6 +14,7 @@ import MyPortfolio from './Components/MyPortfolio/MyPortfolio';
 import NotFound from './Components/NotFound/NotFound';
 import Purchase from './Components/Purchase/Purchase';
 import Navbar from './Components/Shared/Navbar';
+import Payment from './Components/Dashboard/Payment';
 
 function App() {
   return (
@@ -31,17 +32,10 @@ function App() {
     <Route path="/dashboard" element={<Dashboard />}>
         <Route path="my-orders" element={<MyOrders />} />
         <Route path="my-profile" element={<MyProfile />} />
+        <Route path="payment/:id" element={<Payment />} />
+
         <Route path="add-review" element={<AddReview />} />
       </Route>
-
-     {/* <Route path='/dashboard' 
-     element={<Dashboard>
-     </Dashboard>}
-     >
-       <Route path='/my-orders' element={<MyOrders></MyOrders>}/>
-       <Route path='/my-profile' element={<MyProfile></MyProfile>}/>
-       <Route path='/add-review' element={<AddReview></AddReview>}/>
-     </Route> */}
 
      <Route path='*' element={<NotFound></NotFound>}></Route>
      <Route path='/my-portfolio' element={<MyPortfolio></MyPortfolio>}></Route>

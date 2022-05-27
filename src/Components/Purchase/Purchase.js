@@ -51,7 +51,8 @@ const Purchase = () => {
 
   }
 
-  const decreaseQty = () => {
+  const decreaseQty = (e) => {
+    e.preventDefault();
     if (qty <= 100) {
       setQty(100);
     } else {
@@ -59,7 +60,8 @@ const Purchase = () => {
     }
   };
 
-  const increaseQty = () => {
+  const increaseQty = (e) => {
+    e.preventDefault();
     if (qty >= 100) {
       setQty(qty + 1);
     } else {
@@ -68,6 +70,7 @@ const Purchase = () => {
   };
 
   const onChange = (e) => {
+    e.preventDefault();
     const value = parseInt(e.target.value);
     if (value >= 0) {
       setQty(value);
