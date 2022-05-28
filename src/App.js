@@ -16,6 +16,7 @@ import Purchase from './Components/Purchase/Purchase';
 import Navbar from './Components/Shared/Navbar';
 import Payment from './Components/Dashboard/Payment';
 import Users from './Components/Dashboard/Users';
+import AddaTool from './Components/Dashboard/AddaTool';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="payment/:id" element={<Payment />} />
         <Route path="users" element={<Users />} />
         <Route path="add-review" element={<AddReview />} />
+        <Route path="addtool" element={<AddaTool />} />
       </Route>
 
      <Route path='*' element={<NotFound></NotFound>}></Route>
