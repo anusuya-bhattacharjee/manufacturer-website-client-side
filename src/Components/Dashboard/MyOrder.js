@@ -4,22 +4,20 @@ import { Link } from "react-router-dom";
 const MyOrder = (props) => {
   const {
     _id,
-    toolId,
     name,
     price,
     quantity,
     userName,
     userPhone,
     userAddress,
-    isPaid, 
-    iscancelled
+    isPaid
   } = props.order;
 
 
   return (
-    <div class="card w-96 bg-base-100 shadow-xl">
-      <div class="card-body items-center text-center">
-        <h2 class="card-title">{name}</h2>
+    <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card-body items-center text-center">
+        <h2 className="card-title">{name}</h2>
         <p>Total Price: {price}</p>
         <p>Total Quantity: {quantity}</p>
         <p>Your Name: {userName}</p>

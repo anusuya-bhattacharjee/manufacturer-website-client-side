@@ -44,7 +44,6 @@ const Purchase = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         alert("Your Order added successfully!!");
         event.target.reset();
       });
