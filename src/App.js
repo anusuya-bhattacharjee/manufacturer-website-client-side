@@ -15,6 +15,7 @@ import NotFound from './Components/NotFound/NotFound';
 import Purchase from './Components/Purchase/Purchase';
 import Navbar from './Components/Shared/Navbar';
 import Payment from './Components/Dashboard/Payment';
+import Users from './Components/Dashboard/Users';
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
         <Route path="my-orders" element={<MyOrders />} />
         <Route path="my-profile" element={<MyProfile />} />
         <Route path="payment/:id" element={<Payment />} />
-
+        <Route path="users" element={<Users />} />
         <Route path="add-review" element={<AddReview />} />
       </Route>
 
