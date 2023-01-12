@@ -14,7 +14,7 @@ const MyOrders = () => {
     const navigate = useNavigate();
 
 useEffect(() => {
-        fetch(`http://localhost:5000/myOrders/${user && user.email}`, {
+        fetch(`https://manufacturer-website-rupsa23.onrender.com/myOrders/${user && user.email}`, {
           method: 'GET',
           headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -37,7 +37,7 @@ useEffect(() => {
 const handleCancelButton = (id) => { 
     const proceed = window.confirm("Are you sure you want to delete?");
     if (proceed) {
-      const url = `http://localhost:5000/order/${id}`;
+      const url = `https://manufacturer-website-rupsa23.onrender.com/order/${id}`;
       fetch(url, {
         method: "DELETE",
       })

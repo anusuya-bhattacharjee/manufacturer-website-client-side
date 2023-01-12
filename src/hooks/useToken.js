@@ -7,7 +7,7 @@ const useToken = user => {
         const email = user?.user?.email;
         const currentUser = JSON.stringify({email: email})
         if(email){
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://manufacturer-website-rupsa23.onrender.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'

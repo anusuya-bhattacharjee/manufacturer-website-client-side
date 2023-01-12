@@ -17,14 +17,18 @@ import Navbar from './Components/Shared/Navbar';
 import Payment from './Components/Dashboard/Payment';
 import Users from './Components/Dashboard/Users';
 import AddaTool from './Components/Dashboard/AddaTool';
+import AllTools from './Components/Dashboard/AllTools';
+import FotgotPassword from './Components/Login/FotgotPassword';
 
 function App() {
   return (
     <div className="App">
      <Navbar></Navbar>
+     
      <Routes>
      <Route path="/home" element={<Home />}></Route>
      <Route path="/" element={<Home />}></Route>
+     
     <Route path='/purchase/:id' element={
       <RequireAuth>
          <Purchase></Purchase>
@@ -38,6 +42,7 @@ function App() {
         <Route path="users" element={<Users />} />
         <Route path="add-review" element={<AddReview />} />
         <Route path="addtool" element={<AddaTool />} />
+        <Route path="manageTools" element={<AllTools />} />
       </Route>
 
      <Route path='*' element={<NotFound></NotFound>}></Route>
@@ -45,6 +50,8 @@ function App() {
      <Route path='/blogs' element={<Blog></Blog>}></Route>
      <Route path='/login' element={<Login></Login>}></Route>
      <Route path="/signup" element={<Signup />}></Route>
+     <Route path="/forgot" element={<FotgotPassword />}></Route>
+
 
      
      </Routes>

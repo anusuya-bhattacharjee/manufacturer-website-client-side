@@ -13,11 +13,7 @@ const Dashboard = () => {
   return (
     <div className="drawer drawer-mobile">
       <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center justify-center">
-        <p className="font-black dark:text-white text-4xl text-stone-600 mb-10">
-          {" "}
-          Welcome to Dashboard
-        </p>
+      <div className="drawer-content flex flex-col ">
         <Outlet></Outlet>
       </div>
       <div className="drawer-side">
@@ -44,9 +40,15 @@ const Dashboard = () => {
           <Link to="/dashboard/users">All Users</Link>
            </li>
            }
+           
            { admin && 
             <li>
           <Link to="/dashboard/addtool">Add a Tool</Link>
+           </li>
+           }
+           { admin && 
+            <li>
+          <Link to="/dashboard/manageTools">Manage Tools</Link>
            </li>
            }
           

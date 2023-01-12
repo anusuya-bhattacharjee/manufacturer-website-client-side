@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const handleAddTool = event => {
     event.preventDefault();
     const name = event.target.name.value;
@@ -12,7 +11,7 @@ const handleAddTool = event => {
 
     const tool = {name, img, price, description, availableQuantity, MinimumOrderQuantity};
 
-    fetch("http://localhost:5000/addtools", {
+    fetch("https://manufacturer-website-rupsa23.onrender.com/addtools", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(tool),
@@ -28,7 +27,7 @@ const handleAddTool = event => {
 const AddaTool = () => {
   return (
     <form onSubmit={handleAddTool}>
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card w-96 bg-base-100 shadow-xl mx-auto">
    
     <div class="card-body">
         <h2 class="card-title justify-center">Add A Tool</h2>

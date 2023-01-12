@@ -14,7 +14,7 @@ const Purchase = () => {
 
 
   useEffect(() => {
-    const url = `http://localhost:5000/tool/${id}`;
+    const url = `https://manufacturer-website-rupsa23.onrender.com/tool/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setTool(data));
@@ -37,7 +37,7 @@ const Purchase = () => {
     const orderItem = {toolId, name, price, quantity, userName, userEmail, userPhone, userAddress, isPaid, iscancelled};
 
 
-    fetch("http://localhost:5000/addOrderItem", {
+    fetch("https://manufacturer-website-rupsa23.onrender.com/addOrderItem", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(orderItem),

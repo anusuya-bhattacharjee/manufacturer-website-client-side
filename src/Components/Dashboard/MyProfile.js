@@ -10,7 +10,7 @@ const MyProfile = () => {
   const [UserDetails, setUserDetails] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/userDetails/${user && user.email}`)
+    fetch(`https://manufacturer-website-rupsa23.onrender.com/userDetails/${user && user.email}`)
       .then((res) => res.json())
       .then((data) => setUserDetails(data));
   },[user]);
@@ -36,7 +36,7 @@ const MyProfile = () => {
       phone,
     };
 
-    fetch("http://localhost:5000/addUser", {
+    fetch("https://manufacturer-website-rupsa23.onrender.com/addUser", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(User),
@@ -45,12 +45,11 @@ const MyProfile = () => {
       .then((data) => {
         console.log(data);
         alert("Your Information added successfully!!");
-        event.target.reset();
       });
   };
 
   return (
-    <div className="mt-10 sm:mt-0">
+    <div className="mt-10 sm:mt-0 mx-auto">
       <div className="md:grid">
         <div className="mt-5 md:mt-0 md:col-span-2">
           <form onSubmit={handleAddUser}>

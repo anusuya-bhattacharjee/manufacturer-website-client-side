@@ -13,8 +13,6 @@ import useToken from "../../hooks/useToken";
 
 const auth = getAuth(app);
 
-
-
 const Signup = () => {
   const {
     register,
@@ -39,7 +37,6 @@ const Signup = () => {
     navigate('/home');
   }
 
-  
   let signInError;
 
   if (error || gError || updateError) { 
@@ -166,6 +163,7 @@ const Signup = () => {
               </Link>
             </small>
           </p>
+          
           <div className="divider">OR</div>
           <button className="btn btn-outline" onClick={() => signInWithGoogle()}>
             Continue With Google

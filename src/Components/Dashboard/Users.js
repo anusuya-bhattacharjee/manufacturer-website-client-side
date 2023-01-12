@@ -4,7 +4,7 @@ import UserRow from "./UserRow";
 const Users = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/users", {
+    fetch("https://manufacturer-website-rupsa23.onrender.com/users", {
         method: "GET",
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -16,15 +16,14 @@ const Users = () => {
 
   return (
     <div>
-      <h2>All Users: {users.length}</h2>
       <div class="overflow-x-auto">
         <table class="table w-full">
           <thead>
             <tr>
               <th></th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>Emails</th>
+              <th>Make Admin</th>
+              <th>Remove User</th>
             </tr>
           </thead>
           <tbody>

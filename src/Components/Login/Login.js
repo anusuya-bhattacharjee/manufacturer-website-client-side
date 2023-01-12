@@ -1,8 +1,7 @@
 import { getAuth } from "firebase/auth";
-import React from "react";
 import {
   useSignInWithEmailAndPassword,
-  useSignInWithGoogle,
+  useSignInWithGoogle
 } from "react-firebase-hooks/auth";
 import app from "../../firebase.init";
 import { useForm } from "react-hook-form";
@@ -18,7 +17,9 @@ const Login = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
@@ -36,7 +37,6 @@ const Login = () => {
     navigate(from, { replace: true });
   }
 
-
   let signInError;
 
   if (error || gError) {
@@ -50,6 +50,7 @@ const Login = () => {
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
     console.log(data);
+    console.log('auth '+ auth);
   };
 
   return (
@@ -130,17 +131,22 @@ const Login = () => {
               value="Login"
             />
           </form>
-
+              
+              <p className="btn btn-link justify-start"> <Link to="/forgot">Forgot Password?</Link> </p>
+           
           <p>
             <small>
-              New to ManuFacterer Tool? 
-               <Link className="text-secondary" to="/signup">
-                 Create New Account
+              New to ManuFacterer Tool?
+              <Link className="text-secondary" to="/signup">
+                Create New Account
               </Link>
             </small>
           </p>
           <div className="divider">OR</div>
-          <button className="btn btn-outline" onClick={() => signInWithGoogle()}>
+          <button
+            className="btn btn-outline"
+            onClick={() => signInWithGoogle()}
+          >
             Continue With Google
           </button>
         </div>

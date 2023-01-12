@@ -11,7 +11,7 @@ const Payment = () => {
   const { id } = useParams();
   const [Order, setOrder] = useState({});
 
-  const url = `http://localhost:5000/order/${id}`;
+  const url = `https://manufacturer-website-rupsa23.onrender.com/order/${id}`;
 
   useEffect(() => {
     fetch(url)
@@ -23,7 +23,7 @@ const Payment = () => {
 
   return (
     <div>
-      <div className="card w-96 bg-base-100 shadow-xl my-12">
+      <div className="card w-96 bg-base-100 shadow-xl my-12 mx-auto">
         <div className="card-body">
           <p className="text-success font-bold">Hello, {Order.userName}</p>
           <h2 className="card-title justify-center">Pay for {Order.name}</h2>
@@ -33,7 +33,7 @@ const Payment = () => {
         </div>
       </div>
       
-      <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+      <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto">
         <div className="card-body">
           <Elements stripe={stripePromise}>
             {Order.price && <CheckoutForm order={Order}></CheckoutForm>}

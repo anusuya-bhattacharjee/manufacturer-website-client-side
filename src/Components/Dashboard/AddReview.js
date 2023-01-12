@@ -8,7 +8,7 @@ const AddReview = () => {
         const Review = { review: addreview, ratings: ratings}; 
        
 
-        fetch("http://localhost:5000/addReview", {
+        fetch("https://manufacturer-website-rupsa23.onrender.com/addReview", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(Review),
@@ -23,7 +23,7 @@ const AddReview = () => {
    
   return (
     <div>
-      <div className="w-full max-w-xs">
+      <div className="w-full max-w-xs mt-10 mx-auto">
         <form onSubmit={handleAddReview} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <div className="mb-4">
             <label

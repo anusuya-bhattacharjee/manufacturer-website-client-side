@@ -16,7 +16,7 @@ const Tool = ({tool}) => {
         <div className="card-body items-center text-center">
           <h2 className="card-title">{tool.name}</h2>
           <p>Price: {tool.price}</p>
-          <p>MinimumOrderQuantity: {tool.minimumOrderQuantity}</p>
+          <p>MinimumOrderQuantity: {tool.MinimumOrderQuantity}</p>
           <p>Availability: {tool.availableQuantity}</p>
           <p>{tool.description}</p>
           <div className="card-actions">

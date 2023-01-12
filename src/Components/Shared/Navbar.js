@@ -8,8 +8,6 @@ import { useNavigate } from "react-router-dom";
 
 const auth = getAuth(app);
 
-
-
 const Navbar = () => {
 
   const [user, loading, error] = useAuthState(auth);
@@ -35,6 +33,7 @@ const Navbar = () => {
               <li>
               {user && <Link to="/dashboard">Dashboard</Link>}
               </li>
+              
               <li>{user ? <button className="btn btn-ghost" onClick={logout}>Sign Out</button> : <Link to="/login">Login</Link>}
               </li>
             </>
